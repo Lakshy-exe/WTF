@@ -1,0 +1,167 @@
+/* Universal Selector */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Body */
+body {
+  background: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header using Flexbox */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #003366;
+  color: white;
+}
+
+.logo h2 {
+  margin-bottom: 5px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: .3s;
+}
+
+nav a:hover {
+  color: yellow;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 70px 20px;
+  background: linear-gradient(to right, #0059b3, #3399ff);
+  color: white;
+}
+
+.hero h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.hero button {
+  padding: 12px 25px;
+  border: none;
+  background: white;
+  color: #003366;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.hero button:hover {
+  background: yellow;
+}
+
+/* Flexbox */
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 40px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px gray;
+  transition: .3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+/* Grid */
+.news {
+  padding: 40px;
+}
+
+.news h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.box {
+  background: white;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px gray;
+}
+
+/* Footer */
+footer {
+  background: #003366;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+/* Responsive Tablet */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+}
+
+/* Responsive Mobile */
+@media (max-width: 480px) {
+  .hero {
+    padding: 40px 10px;
+  }
+
+  .hero h1 {
+    font-size: 24px;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+  }
+}
