@@ -1,0 +1,242 @@
+/* Universal Reset & Box Model */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+  color: #333333;
+  background-color: #ffffff;
+}
+
+/* Header & Flex Navigation */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0d6efd;
+  color: #ffffff;
+  padding: 1rem 5%;
+}
+
+.logo h2 {
+  font-size: 1.6rem;
+}
+
+.logo p {
+  font-size: 0.85rem;
+  color: #cfe2ff;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffc107;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(rgba(13, 110, 253, 0.85), rgba(13, 110, 253, 0.85)), #084298;
+  color: #ffffff;
+  text-align: center;
+  padding: 4rem 1.5rem;
+}
+
+.hero h1 {
+  font-size: 2.3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn-emergency {
+  display: inline-block;
+  background-color: #dc3545;
+  color: #ffffff;
+  padding: 0.75rem 1.75rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-emergency:hover {
+  background-color: #b02a37;
+}
+
+/* Emergency Services Section */
+.emergency-banner {
+  background-color: #f8d7da;
+  border-left: 6px solid #dc3545;
+  color: #842029;
+  padding: 1.5rem 5%;
+  margin: 2rem 5%;
+  border-radius: 4px;
+}
+
+.emergency-call {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.emergency-call span {
+  font-weight: bold;
+  color: #dc3545;
+}
+
+/* Layout Containers & Typography */
+.section-container {
+  padding: 3rem 5%;
+}
+
+.bg-light {
+  background-color: #f8f9fa;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #0d6efd;
+  font-size: 1.8rem;
+}
+
+/* Departments: CSS Grid */
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+  color: #0d6efd;
+  margin-bottom: 0.5rem;
+}
+
+/* Doctors: Flexbox Layout */
+.doctor-flex {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.doctor-card {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  padding: 1.5rem;
+  flex: 1 1 280px;
+  max-width: 350px;
+  text-align: center;
+}
+
+.doctor-card h3 {
+  color: #333333;
+}
+
+.doctor-card .speciality {
+  color: #0d6efd;
+  font-weight: 600;
+  margin: 0.3rem 0 0.8rem;
+}
+
+/* Contact Section */
+.contact-wrapper {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.contact-info, .contact-form {
+  flex: 1 1 300px;
+}
+
+.contact-info address {
+  font-style: normal;
+  margin: 0.8rem 0;
+  line-height: 1.7;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.contact-form input, 
+.contact-form select, 
+.contact-form button {
+  padding: 0.7rem;
+  font-size: 0.95rem;
+  border-radius: 4px;
+  border: 1px solid #ced4da;
+}
+
+.contact-form button {
+  background-color: #0d6efd;
+  color: #ffffff;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #0b5ed7;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background-color: #212529;
+  color: #ffffff;
+  padding: 1.2rem;
+  font-size: 0.9rem;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .emergency-banner {
+    margin: 1.5rem 1rem;
+  }
+}

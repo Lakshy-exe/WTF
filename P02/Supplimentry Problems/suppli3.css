@@ -1,0 +1,241 @@
+/* Universal Reset and Box Model */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+  color: #2b2d42;
+  background-color: #ffffff;
+}
+
+/* Header & Flex Navigation */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e293b;
+  padding: 1.2rem 5%;
+  color: #ffffff;
+}
+
+.logo h2 {
+  font-size: 1.5rem;
+  color: #38bdf8;
+}
+
+.logo p {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: #f1f5f9;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #38bdf8;
+}
+
+/* Hero Section */
+.hero {
+  background-color: #0f172a;
+  color: #ffffff;
+  text-align: center;
+  padding: 4.5rem 1.5rem;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  color: #cbd5e1;
+  max-width: 650px;
+  margin: 0 auto 1.5rem;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #0284c7;
+  color: #ffffff;
+  padding: 0.7rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0369a1;
+}
+
+/* Layout Utilities */
+.section-container {
+  padding: 3.5rem 5%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.bg-light {
+  background-color: #f8fafc;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #0f172a;
+  font-size: 1.8rem;
+}
+
+.about-text {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  color: #475569;
+}
+
+/* Skills: Flexbox Layout */
+.skills-flex {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.skill-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 1.5rem;
+  flex: 1 1 260px;
+  max-width: 320px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.skill-card h3 {
+  color: #0284c7;
+  margin-bottom: 0.5rem;
+}
+
+/* Projects: CSS Grid Layout */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.project-card h3 {
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  color: #64748b;
+  margin-bottom: 1rem;
+}
+
+.project-card .tag {
+  align-self: flex-start;
+  display: inline-block;
+  background-color: #e0f2fe;
+  color: #0369a1;
+  font-size: 0.8rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+/* Contact Section Layout */
+.contact-wrapper {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.contact-info, .contact-form {
+  flex: 1 1 300px;
+}
+
+.contact-info p {
+  margin: 0.6rem 0;
+  color: #475569;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+/* Footer */
+footer {
+  background-color: #0f172a;
+  color: #94a3b8;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+}
+
+/* Tablet & Mobile Media Queries */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .contact-wrapper {
+    flex-direction: column;
+  }
+}

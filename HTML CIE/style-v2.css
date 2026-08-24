@@ -1,0 +1,326 @@
+/* ==========================================================================
+   VALORANT SUCKS - TYPOGRAPHY & DESIGN STYLESHEET (style-v2.css)
+   ========================================================================== */
+
+/* 
+   THEME CONCEPT: "Gaming Dark/Rage Mode"
+   Since this website is about the frustrating "Valorant Hell Hole", we are using 
+   a sleek dark theme with deep reds (using #ff4655, the official Valorant red!) 
+   to evoke a dramatic, high-energy gaming forum or review site.
+*/
+
+/* ==========================================================================
+   1. GLOBAL RESET & BOX MODEL (The base foundation)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding & borders don't shrink/expand your boxes unpredictably */
+}
+
+body {
+    background-color: #0f1115; /* Deep dark slate background */
+    color: #e2e8f0; /* Crisp light-grey text for comfortable reading on dark background */
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* ==========================================================================
+   2. HEADER & NAVIGATION STYLING (The top banner)
+   ========================================================================== */
+header {
+    background-color: #161920; /* Dark charcoal card background */
+    border-bottom: 4px solid #ff4655; /* The signature red accent line at the bottom of the header */
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 8px 8px 0 0; /* Soft rounded corners on the top only */
+    margin-bottom: 25px; /* Vertical gap before the main content card starts */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Strong shadow for depth */
+}
+
+header h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #ff4655; /* Dramatic red brand title */
+    text-transform: uppercase; /* Force uppercase for a strong, bold statement */
+    letter-spacing: 2px; /* Slightly space letters out like a game UI */
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px rgba(255, 70, 85, 0.2); /* Soft red ambient glow */
+}
+
+header img {
+    max-width: 120px;
+    height: auto;
+    border-radius: 4px;
+    padding: 8px;
+    background-color: rgba(255, 255, 255, 0.05); /* Very subtle white highlighting behind the logo */
+    border: 1px solid rgba(255, 70, 85, 0.2);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+header img:hover {
+    transform: rotate(5deg) scale(1.05); /* Playful little tilt when hovered */
+}
+
+/* Navigation Links */
+nav ul {
+    list-style-type: none; /* Removes the ugly default bullet points */
+    margin-top: 10px;
+}
+
+nav li {
+    display: inline-block; /* Aligns list items horizontally side-by-side */
+    margin: 5px 15px; /* Comfortable gap between links */
+}
+
+nav a {
+    color: #94a3b8; /* Muted slate color by default */
+    text-decoration: none; /* Removes default underlines */
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    transition: all 0.2s ease-in-out; /* Smooth transition for hover effects */
+}
+
+nav a:hover {
+    color: #ffffff; /* Bright white text on hover */
+    background-color: rgba(255, 70, 85, 0.1); /* Transparent red pill highlight */
+    border: 1px solid #ff4655; /* Sharp red outline */
+}
+
+/* ==========================================================================
+   3. LAYOUT CONTAINER & CARD BOXES
+   ========================================================================== */
+main {
+    max-width: 960px; /* Keeps the page layout locked and centered on wide monitors */
+    margin: 0 auto; /* Horizontally centers the entire page on the screen */
+}
+
+/* Individual Content Cards (Sections and Articles) */
+section, article {
+    background-color: #161920; /* Unified dark card background */
+    padding: 30px;
+    margin-bottom: 25px; /* Gap separating cards */
+    border-radius: 8px; /* Clean rounded edges */
+    border: 1px solid #232936; /* Subtle grey-blue framing border */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Deep shadows for three-dimensional pop */
+}
+
+/* Headings for Sections */
+h2 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    border-left: 5px solid #ff4655; /* The "Rage Red" accent block on the left */
+    padding-left: 15px; /* Spaces text away from the left red line */
+}
+
+p {
+    color: #94a3b8; /* Readable muted text color */
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+/* Highlighted Home Banner */
+#home img {
+    max-width: 100%; /* Extremely important: forces the banner to scale responsively on phones! */
+    height: auto;
+    border-radius: 6px;
+    border: 2px solid #232936;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* ==========================================================================
+   4. RAGE SERVICES BULLET LIST
+   ========================================================================== */
+#Services ul {
+    list-style-type: none; /* Removes standard bullets to build a custom styled list */
+    padding-left: 5px;
+}
+
+#Services li {
+    font-size: 1.1rem;
+    color: #e2e8f0;
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    background-color: rgba(255, 70, 85, 0.05); /* Extremely subtle red strip */
+    border-left: 3px solid #ff4655; /* Little red bracket indicator */
+    border-radius: 0 4px 4px 0;
+    transition: transform 0.2s ease;
+}
+
+#Services li:hover {
+    transform: translateX(5px); /* Gentle slide-to-the-right animation on hover */
+    background-color: rgba(255, 70, 85, 0.1);
+}
+
+/* ==========================================================================
+   5. GAME AGENTS DATA TABLE
+   ========================================================================== */
+table {
+    width: 100%; /* Force the table to expand across the entire width of its container card */
+    border-collapse: collapse; /* Merges borders into clean single lines */
+    margin-top: 20px;
+    background-color: #0f1115; /* Contrast table base */
+    border-radius: 6px;
+    overflow: hidden; /* Clips rows so they obey rounded corners */
+}
+
+/* Base borders on table itself */
+table, th, td {
+    border: 1px solid #232936; 
+}
+
+th, td {
+    padding: 15px; /* Comfortably large text boxes */
+    text-align: center; /* Centers columns for neat game stat look */
+    font-size: 1rem;
+}
+
+th {
+    background-color: #ff4655; /* Prominent red header row */
+    color: #ffffff; /* White title text */
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+td {
+    color: #e2e8f0;
+}
+
+/* Alternate row styling (stripy table background) */
+tbody tr:nth-child(even) {
+    background-color: #161920; 
+}
+
+/* Subtle highlights when hovering over individual rows */
+tbody tr:hover {
+    background-color: rgba(255, 70, 85, 0.08) !important;
+}
+
+/* ==========================================================================
+   6. INTERACTIVE CONSOLE FORMS
+   ========================================================================== */
+form {
+    background-color: #161920;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #232936;
+    margin-bottom: 25px;
+}
+
+/* Labels */
+label {
+    display: inline-block;
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    margin-top: 15px;
+}
+
+/* Inputs & Textboxes */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%; /* Stretch across rows fully */
+    padding: 12px 16px;
+    background-color: #0f1115; /* Dark text input background */
+    border: 1px solid #2d3748; /* Muted dark border */
+    border-radius: 4px;
+    color: #ffffff; /* Pure white text for typed entries */
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+/* Interactive Focus Effects (Glow) */
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    outline: none; /* Turns off standard boring browser focus outline */
+    border-color: #ff4655; /* Focus turns vibrant red */
+    box-shadow: 0 0 8px rgba(255, 70, 85, 0.4); /* Neon red glow around text box */
+}
+
+/* Interactive Action Buttons */
+input[type="submit"],
+input[type="reset"] {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    margin-top: 25px;
+}
+
+input[type="submit"] {
+    background-color: #ff4655; /* Vibrant primary red button */
+    color: #ffffff;
+    margin-right: 15px; /* Spaces out reset button next to it */
+    box-shadow: 0 4px 6px rgba(255, 70, 85, 0.2);
+}
+
+input[type="submit"]:hover {
+    background-color: #e53e4f; /* Slight visual darken on hover */
+    box-shadow: 0 6px 12px rgba(255, 70, 85, 0.3);
+}
+
+input[type="reset"] {
+    background-color: #2d3748; /* Secondary neutral charcoal button */
+    color: #cbd5e1;
+}
+
+input[type="reset"]:hover {
+    background-color: #4a5568;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   7. FOOTER STYLING (The bottom credits)
+   ========================================================================== */
+footer {
+    background-color: #0c0e12; /* Deep solid black-slate */
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 8px;
+    border-top: 1px solid #232936;
+}
+
+footer p {
+    color: #64748b; /* Soft slate grey */
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+}
+
+footer a {
+    color: #ff4655; /* Hyperlinks highlighted in red */
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.2s ease;
+    margin: 0 5px;
+}
+
+footer a:hover {
+    color: #ffffff; /* Brighten to pure white on hover */
+    text-decoration: underline;
+}
