@@ -6,237 +6,140 @@
 }
 
 body {
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family: Arial, sans-serif;
+  color: #333;
   line-height: 1.6;
-  color: #333333;
-  background-color: #ffffff;
 }
 
-/* Header & Flex Navigation */
+/* Flexbox Header */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #0d6efd;
-  color: #ffffff;
+  background-color: #222;
+  color: #fff;
   padding: 1rem 5%;
 }
 
-.logo h2 {
-  font-size: 1.6rem;
-}
-
-.logo p {
-  font-size: 0.85rem;
-  color: #cfe2ff;
-}
-
-nav ul {
+.nav-links {
   display: flex;
   list-style: none;
   gap: 1.5rem;
 }
 
-nav a {
-  color: #ffffff;
+.nav-links a {
+  color: #fff;
   text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
+  transition: color 0.3s;
 }
 
-nav a:hover {
-  color: #ffc107;
+.nav-links a:hover {
+  color: #ff9900;
 }
 
-/* Hero Section */
-.hero {
-  background: linear-gradient(rgba(13, 110, 253, 0.85), rgba(13, 110, 253, 0.85)), #084298;
-  color: #ffffff;
+/* CSS Grid Promotional Banners */
+.promo-banner {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 1rem;
+  padding: 2rem 5%;
+}
+
+.banner {
+  background-color: #f4f4f4;
+  padding: 2rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main-banner {
+  grid-row: 1 / span 2;
+  background-color: #ff9900;
+  color: #fff;
+  min-height: 300px;
+}
+
+.side-banner-1, .side-banner-2 {
+  background-color: #e0e0e0;
+  min-height: 140px;
+}
+
+/* CSS Grid Product Catalog */
+.product-catalog {
+  padding: 2rem 5%;
   text-align: center;
-  padding: 4rem 1.5rem;
 }
 
-.hero h1 {
-  font-size: 2.3rem;
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.product-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-image {
+  width: 100%;
+  height: 150px;
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 1rem;
 }
 
-.hero p {
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
-}
-
-.btn-emergency {
-  display: inline-block;
-  background-color: #dc3545;
-  color: #ffffff;
-  padding: 0.75rem 1.75rem;
-  border-radius: 4px;
-  text-decoration: none;
+.price {
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  color: #ff9900;
+  margin: 0.5rem 0;
 }
 
-.btn-emergency:hover {
-  background-color: #b02a37;
-}
-
-/* Emergency Services Section */
-.emergency-banner {
-  background-color: #f8d7da;
-  border-left: 6px solid #dc3545;
-  color: #842029;
-  padding: 1.5rem 5%;
-  margin: 2rem 5%;
-  border-radius: 4px;
-}
-
-.emergency-call {
-  margin-top: 0.5rem;
-  font-size: 1.2rem;
-}
-
-.emergency-call span {
-  font-weight: bold;
-  color: #dc3545;
-}
-
-/* Layout Containers & Typography */
-.section-container {
-  padding: 3rem 5%;
-}
-
-.bg-light {
-  background-color: #f8f9fa;
-}
-
-.section-title {
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #0d6efd;
-  font-size: 1.8rem;
-}
-
-/* Departments: CSS Grid */
-.grid-layout {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-}
-
-.card {
-  background-color: #ffffff;
-  padding: 1.5rem;
-  border: 1px solid #dee2e6;
-  border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-.card h3 {
-  color: #0d6efd;
-  margin-bottom: 0.5rem;
-}
-
-/* Doctors: Flexbox Layout */
-.doctor-flex {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.doctor-card {
-  background-color: #ffffff;
-  border: 1px solid #dee2e6;
-  border-radius: 6px;
-  padding: 1.5rem;
-  flex: 1 1 280px;
-  max-width: 350px;
-  text-align: center;
-}
-
-.doctor-card h3 {
-  color: #333333;
-}
-
-.doctor-card .speciality {
-  color: #0d6efd;
-  font-weight: 600;
-  margin: 0.3rem 0 0.8rem;
-}
-
-/* Contact Section */
-.contact-wrapper {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.contact-info, .contact-form {
-  flex: 1 1 300px;
-}
-
-.contact-info address {
-  font-style: normal;
-  margin: 0.8rem 0;
-  line-height: 1.7;
-}
-
-.contact-form form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-
-.contact-form input, 
-.contact-form select, 
-.contact-form button {
-  padding: 0.7rem;
-  font-size: 0.95rem;
-  border-radius: 4px;
-  border: 1px solid #ced4da;
-}
-
-.contact-form button {
-  background-color: #0d6efd;
-  color: #ffffff;
+button {
+  padding: 0.5rem 1rem;
+  background-color: #222;
+  color: #fff;
   border: none;
-  font-weight: bold;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  width: 100%;
 }
 
-.contact-form button:hover {
-  background-color: #0b5ed7;
+button:hover {
+  background-color: #555;
 }
 
-/* Footer */
 footer {
   text-align: center;
-  background-color: #212529;
-  color: #ffffff;
-  padding: 1.2rem;
-  font-size: 0.9rem;
+  padding: 1.5rem;
+  background-color: #222;
+  color: #fff;
+  margin-top: 2rem;
 }
 
-/* Responsive Media Queries */
+/* Media Queries for Mobile Responsiveness */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
-    text-align: center;
     gap: 1rem;
   }
-
-  nav ul {
-    flex-direction: column;
-    gap: 0.8rem;
+  
+  .promo-banner {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
   }
-
-  .hero h1 {
-    font-size: 1.8rem;
-  }
-
-  .emergency-banner {
-    margin: 1.5rem 1rem;
+  
+  .main-banner {
+    grid-row: auto;
   }
 }
