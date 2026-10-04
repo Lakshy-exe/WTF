@@ -1,0 +1,25 @@
+body{
+    font-family:Arial;
+    padding:20px;
+    background:white;
+    transition:0.5s;
+}
+
+.dark{
+    background:#222;
+    color:white;
+}
+
+button{
+    padding:10px;
+    margin:5px;
+    cursor:pointer;
+}
+
+img{
+    border-radius:10px;
+}
+
+li{
+    padding:8px;
+}

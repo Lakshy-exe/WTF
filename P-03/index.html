@@ -3,35 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Result Calculator</title>
+    <title>Secure Bank - JavaScript Utilities</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="calculator-container">
-        <h2>Student Result Calculator</h2>
-        <div class="input-group">
-            <label for="math">Mathematics:</label>
-            <input type="number" id="math" placeholder="Enter marks (0-100)">
-        </div>
-        <div class="input-group">
-            <label for="science">Science:</label>
-            <input type="number" id="science" placeholder="Enter marks (0-100)">
-        </div>
-        <div class="input-group">
-            <label for="english">English:</label>
-            <input type="number" id="english" placeholder="Enter marks (0-100)">
-        </div>
-        
-        <button onclick="calculateResult()">Calculate Result</button>
 
-        <div id="result-display" class="result-box hidden">
-            <p><strong>Total Marks:</strong> <span id="total-marks"></span> / 300</p>
-            <p><strong>Percentage:</strong> <span id="percentage"></span>%</p>
-            <p><strong>Grade:</strong> <span id="grade"></span></p>
-            <p><strong>Classification:</strong> <span id="classification"></span></p>
-        </div>
+<body>
+
+<div class="container">
+
+    <h1>Secure Bank - JavaScript Utilities</h1>
+
+    <!-- Loan Eligibility -->
+    <div class="section">
+        <h2>1. Loan Eligibility Checker</h2>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age">
+
+        <label for="salary">Monthly Salary (₹):</label>
+        <input type="number" id="salary">
+
+        <label for="creditScore">Credit Score:</label>
+        <input type="number" id="creditScore">
+
+        <button onclick="checkLoanEligibility()">
+            Check Eligibility
+        </button>
+
+        <div id="loanResult" class="result"></div>
     </div>
 
-    <script src="script.js"></script>
+
+    <!-- EMI Calculator -->
+    <div class="section">
+        <h2>2. EMI Calculator</h2>
+
+        <label for="loanAmount">Loan Amount (₹):</label>
+        <input type="number" id="loanAmount">
+
+        <label for="interestRate">Annual Interest Rate (%):</label>
+        <input type="number" id="interestRate" step="0.01">
+
+        <label for="loanYears">Loan Duration (Years):</label>
+        <input type="number" id="loanYears">
+
+        <button onclick="calculateEMI()">
+            Calculate EMI
+        </button>
+
+        <div id="emiResult" class="result"></div>
+    </div>
+
+
+    <!-- Interest Calculator -->
+    <div class="section">
+        <h2>3. Simple Interest Calculator</h2>
+
+        <label for="principal">Principal Amount (₹):</label>
+        <input type="number" id="principal">
+
+        <label for="rate">Rate of Interest (%):</label>
+        <input type="number" id="rate">
+
+        <label for="time">Time (Years):</label>
+        <input type="number" id="time">
+
+        <button onclick="calculateInterest()">
+            Calculate Interest
+        </button>
+
+        <div id="interestResult" class="result"></div>
+    </div>
+
+
+    <!-- Account Utility -->
+    <div class="section">
+        <h2>4. Account Utility</h2>
+
+        <label for="accountType">Select Account Type:</label>
+
+        <select id="accountType">
+            <option value="1">Savings Account</option>
+            <option value="2">Current Account</option>
+            <option value="3">Salary Account</option>
+            <option value="4">Fixed Deposit</option>
+        </select>
+
+        <button onclick="showAccountDetails()">
+            Show Account Details
+        </button>
+
+        <div id="accountResult" class="result"></div>
+    </div>
+
+
+    <!-- Interest Table -->
+    <div class="section">
+        <h2>5. Interest Table</h2>
+
+        <label for="tablePrincipal">
+            Principal Amount (₹):
+        </label>
+
+        <input type="number" id="tablePrincipal">
+
+        <label for="tableRate">
+            Annual Interest Rate (%):
+        </label>
+
+        <input type="number" id="tableRate">
+
+        <button onclick="generateInterestTable()">
+            Generate Interest Table
+        </button>
+
+        <div id="tableResult" class="result"></div>
+    </div>
+
+</div>
+
+<!-- External JavaScript -->
+<script src="script.js"></script>
+
 </body>
 </html>
