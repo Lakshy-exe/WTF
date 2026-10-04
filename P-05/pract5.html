@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CityCare Patient Registration</title>
+  <style>
+    /* Clean, professional healthcare form styling */
+    body {
+      font-family: Arial, sans-serif;
+      background: #dfeef4;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      color: #1d2d3a;
+    }
+
+    .container {
+      max-width: 560px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 30px 28px 24px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid #cfdfe8;
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(31, 66, 88, 0.12);
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 16px;
+      }
+
+      .container {
+        padding: 22px 18px 18px;
+      }
+    }
+
+    h2 {
+      text-align: center;
+      color: #0c7aa0;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: 0 0 8px;
+      font-weight: 700;
+    }
+
+    h3 {
+      text-align: center;
+      color: #2b5165;
+      letter-spacing: 0.04em;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      margin: 0 0 18px;
+      font-weight: 600;
+    }
+
+    label {
+      display: block;
+      margin-top: 14px;
+      font-weight: 700;
+      color: #21455c;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 11px 12px;
+      margin-top: 6px;
+      box-sizing: border-box;
+      border: 1px solid #bcd3df;
+      border-radius: 8px;
+      background: #f9fcfe;
+      color: #1d2d3a;
+      font-size: 15px;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #7692a3;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #0d8db8;
+      box-shadow: 0 0 0 2px rgba(13, 141, 184, 0.12);
+    }
+
+    .error {
+      color: #b71c1c;
+      font-size: 13px;
+      margin-top: 6px;
+      min-height: 16px;
+    }
+
+    .success {
+      color: #0d7c52;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px 18px;
+      margin-top: 20px;
+      background: #0d8db8;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    button:hover {
+      background: #0b7597;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Edit hospital name and form heading text here -->
+    <h2>Eisler Memorial Hospital</h2>
+    <h3>Patient Admission Form</h3>
+ 
+    <form id="patientForm" novalidate>
+      <!-- Edit the name field label and placeholder text here -->
+      <label for="name">Patient Name *</label>
+      <input type="text" id="name" placeholder="Enter full name"
+             autocomplete="name">
+      <div class="error" id="nameError" aria-live="polite"></div>
+ 
+      <!-- Edit email field label and example text here -->
+      <label for="email">Email Address *</label>
+      <input type="text" id="email" placeholder="example@gmail.com"
+             autocomplete="email">
+      <div class="error" id="emailError" aria-live="polite"></div>
+ 
+      <!-- Edit mobile field label and placeholder here -->
+      <label for="mobile">Mobile Number *</label>
+      <input type="text" id="mobile" placeholder="10-digit mobile number"
+             inputmode="numeric" maxlength="10" autocomplete="tel-national">
+      <div class="error" id="mobileError" aria-live="polite"></div>
+ 
+      <!-- Edit DOB label here -->
+      <label for="dob">Date of Birth *</label>
+      <input type="date" id="dob">
+      <div class="error" id="dobError" aria-live="polite"></div>
+ 
+      <!-- Edit gender options here -->
+      <label for="gender">Gender *</label>
+      <select id="gender">
+        <option value="">Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+        <option value="Prefer not to say">Prefer not to say</option>
+      </select>
+      <div class="error" id="genderError" aria-live="polite"></div>
+ 
+      <!-- Edit address label and placeholder here -->
+      <label for="address">Address *</label>
+      <textarea id="address" rows="3" placeholder="Enter your address"></textarea>
+      <div class="error" id="addressError" aria-live="polite"></div>
+ 
+      <!-- Edit password field label and placeholder here -->
+      <label for="password">Password *</label>
+      <input type="password" id="password" placeholder="Create a password"
+             autocomplete="new-password">
+      <div class="error" id="passwordError" aria-live="polite"></div>
+ 
+      <!-- Edit confirm password field label and placeholder here -->
+      <label for="confirmPassword">Confirm Password *</label>
+      <input type="password" id="confirmPassword"
+             placeholder="Re-enter password" autocomplete="new-password">
+      <div class="error" id="confirmError" aria-live="polite"></div>
+ 
+      <!-- Edit button text here -->
+      <button type="submit">Submit Registration</button>
+      <div id="result" class="success" role="status"
+           aria-live="polite"></div>
+    </form>
+  </div>
+ 
+  <script>
+    // Edit the form ID if you rename the form in HTML.
+    const form = document.getElementById("patientForm");
+ 
+    // This function shows validation errors for each field.
+    function showError(id, message) {
+      document.getElementById(id + "Error").textContent = message;
+    }
+ 
+    // Clear all previous validation messages before rechecking.
+    function clearErrors() {
+      document.querySelectorAll(".error").forEach(function (el) {
+        el.textContent = "";
+      });
+      document.getElementById("result").textContent = "";
+    }
+ 
+    // Edit the name validation rules here if you want stricter/looser checks.
+    function validateName() {
+      const name = document.getElementById("name").value.trim();
+      const pattern = /^[A-Za-z][A-Za-z .'-]{1,49}$/;
+      if (name === "") {
+        showError("name", "Patient name is required.");
+        return false;
+      }
+      if (!pattern.test(name)) {
+        showError("name", "Enter a valid name (2–50 characters).");
+        return false;
+      }
+      return true;
+    }
+ 
+    // Edit the email pattern or message here.
+    function validateEmail() {
+      const email = document.getElementById("email").value.trim();
+      const pattern =
+        /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+      if (email === "") {
+        showError("email", "Email is required.");
+        return false;
+      }
+      if (!pattern.test(email)) {
+        showError("email", "Enter a valid email address.");
+        return false;
+      }
+      return true;
+    }
+ 
+    // Edit mobile number rules here, including allowed starting digits.
+    function validateMobile() {
+      const mobile = document.getElementById("mobile").value.trim();
+      const pattern = /^[6-9][0-9]{9}$/;
+      if (mobile === "") {
+        showError("mobile", "Mobile number is required.");
+        return false;
+      }
+      if (!pattern.test(mobile)) {
+        showError("mobile",
+          "Enter a valid 10-digit Indian mobile number.");
+        return false;
+      }
+      return true;
+    }
+ 
+    // Edit DOB validation rules here if you want to allow future dates or different age checks.
+    function validateDOB() {
+      const dob = document.getElementById("dob").value;
+      if (dob === "") {
+        showError("dob", "Date of birth is required.");
+        return false;
+      }
+      const selectedDate = new Date(dob + "T00:00:00");
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      if (Number.isNaN(selectedDate.getTime()) ||
+          selectedDate > today) {
+        showError("dob", "Date of birth cannot be in the future.");
+        return false;
+      }
+      return true;
+    }
+ 
+    // Edit gender validation message here if needed.
+    function validateGender() {
+      const gender = document.getElementById("gender").value;
+      if (gender === "") {
+        showError("gender", "Please select your gender.");
+        return false;
+      }
+      return true;
+    }
+ 
+    // Edit address length restrictions here.
+    function validateAddress() {
+      const address =
+        document.getElementById("address").value.trim();
+      if (address === "") {
+        showError("address", "Address is required.");
+        return false;
+      }
+      if (address.length < 5 || address.length > 200) {
+        showError("address",
+          "Address must contain 5–200 characters.");
+        return false;
+      }
+      return true;
+    }
+ 
+    // Edit password requirements here: min length, uppercase, number, symbol.
+    function validatePassword() {
+      const password = document.getElementById("password").value;
+      const pattern =
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9\s])\S{8,64}$/;
+      if (password === "") {
+        showError("password", "Password is required.");
+        return false;
+      }
+      if (!pattern.test(password)) {
+        showError("password",
+          "Use 8–64 characters with uppercase, lowercase, " +
+          "a number and a special character.");
+        return false;
+      }
+      return true;  
+    }
+ 
+    // Edit confirm password validation message here.
+    function validateConfirmPassword() {
+      const password = document.getElementById("password").value;
+      const confirm =
+        document.getElementById("confirmPassword").value;
+      if (confirm === "") {
+        showError("confirm", "Please confirm your password.");
+        return false;
+      }
+      if (password !== confirm) {
+        showError("confirm", "Passwords do not match.");
+        return false;
+      }
+      return true;
+    }
+ 
+    // Edit the success message text and reset behavior here.
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      clearErrors();
+ 
+      const isValid = [
+        validateName(),
+        validateEmail(),
+        validateMobile(),
+        validateDOB(),
+        validateGender(),
+        validateAddress(),
+        validatePassword(),
+        validateConfirmPassword()
+      ].every(Boolean);
+ 
+      if (isValid) {
+        document.getElementById("result").textContent =
+          "Registration form validated successfully!";
+        // Demonstration only: no data is sent or stored.
+        form.reset();
+      }
+    });
+  </script>
+</body>
+</html>
