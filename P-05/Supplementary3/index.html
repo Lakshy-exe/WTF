@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Tech Summit Registration</h2>
+        
+        <form id="eventForm">
+            <!-- Participant Details -->
+            <h3>Participant Details</h3>
+            <div class="input-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" placeholder="Enter your name" required>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="you@domain.com" required>
+            </div>
+
+            <div class="input-group">
+                <label for="mobile">Mobile Number</label>
+                <input type="text" id="mobile" placeholder="10-digit mobile number" maxlength="10" required>
+            </div>
+
+            <!-- Payment Information -->
+            <h3>Payment Information</h3>
+            <div class="input-group">
+                <label for="cardNumber">Card Number</label>
+                <input type="text" id="cardNumber" placeholder="16-digit card number" maxlength="16" required>
+            </div>
+
+            <div class="row">
+                <div class="input-group half">
+                    <label for="expiry">Expiry (MM/YY)</label>
+                    <input type="text" id="expiry" placeholder="MM/YY" maxlength="5" required>
+                </div>
+                <div class="input-group half">
+                    <label for="cvv">CVV</label>
+                    <input type="password" id="cvv" placeholder="123" maxlength="4" required>
+                </div>
+            </div>
+
+            <div id="errorMessages" class="error-box hidden"></div>
+            <div id="successMessage" class="success-box hidden">Registration Confirmed! See you at the event.</div>
+
+            <button type="submit">Confirm Payment & Register</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

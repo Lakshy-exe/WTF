@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Bill Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <h2>Shopping Bill Generator</h2>
+        
+        <div class="input-group">
+            <label for="purchase-amount">Total Purchase Amount (₹):</label>
+            <input type="number" id="purchase-amount" placeholder="Enter amount">
+        </div>
+        
+        <button onclick="generateBill()">Generate Bill</button>
+
+        <div id="bill-receipt" class="result-box hidden">
+            <h3>Receipt Summary</h3>
+            <p><strong>Subtotal:</strong> ₹<span id="subtotal">0.00</span></p>
+            <p><strong>Discount Applied:</strong> -₹<span id="discount">0.00</span> <span id="discount-rate" class="badge"></span></p>
+            <p><strong>GST (18%):</strong> +₹<span id="gst">0.00</span></p>
+            <hr>
+            <p class="final-amount"><strong>Final Payable:</strong> ₹<span id="final-payable">0.00</span></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

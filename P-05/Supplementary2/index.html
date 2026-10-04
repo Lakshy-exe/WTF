@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Registration Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Employee Registration</h2>
+        
+        <form id="employeeForm">
+            <div class="input-group">
+                <label for="empId">Employee ID</label>
+                <input type="text" id="empId" placeholder="e.g., EMP-1234" required>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Work Email</label>
+                <input type="email" id="email" placeholder="employee@company.com" required>
+            </div>
+
+            <div class="input-group">
+                <label for="mobile">Mobile Number</label>
+                <input type="text" id="mobile" placeholder="10-digit mobile number" maxlength="10" required>
+            </div>
+
+            <div class="input-group">
+                <label for="salary">Monthly Salary (₹)</label>
+                <input type="text" id="salary" placeholder="e.g., 50000" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Account Password</label>
+                <input type="password" id="password" placeholder="Min 8 chars, 1 uppercase, 1 number" required>
+            </div>
+
+            <div id="errorMessages" class="error-box hidden"></div>
+            <div id="successMessage" class="success-box hidden">Employee Registered Successfully!</div>
+
+            <button type="submit">Register Employee</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

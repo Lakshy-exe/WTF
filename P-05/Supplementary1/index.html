@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Admission Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Student Admission Portal</h2>
+        
+        <form id="admissionForm">
+            <div class="input-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" placeholder="Enter full name" required>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="example@depstar.ac.in" required>
+            </div>
+
+            <div class="input-group">
+                <label for="mobile">Mobile Number</label>
+                <input type="text" id="mobile" placeholder="10-digit mobile number" maxlength="10" required>
+            </div>
+
+            <div class="input-group">
+                <label for="course">Desired Course</label>
+                <select id="course" required>
+                    <option value="">Select a course...</option>
+                    <option value="BTech_IT">B.Tech Information Technology</option>
+                    <option value="BTech_CE">B.Tech Computer Engineering</option>
+                    <option value="BTech_CSE">B.Tech Computer Science</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Set Password</label>
+                <input type="password" id="password" placeholder="Min 8 chars, 1 letter, 1 number" required>
+            </div>
+
+            <div class="input-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" placeholder="Re-enter password" required>
+            </div>
+
+            <div id="errorMessages" class="error-box hidden"></div>
+            <div id="successMessage" class="success-box hidden">Admission Form Validated Successfully!</div>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
