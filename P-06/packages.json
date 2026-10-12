@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "destination": "Goa",
+    "duration": "4 Days / 3 Nights",
+    "price": 15000,
+    "description": "Enjoy beautiful beaches, nightlife and water sports."
+  },
+  {
+    "id": 2,
+    "destination": "Manali",
+    "duration": "5 Days / 4 Nights",
+    "price": 18000,
+    "description": "Experience mountains, snow and beautiful valleys."
+  },
+  {
+    "id": 3,
+    "destination": "Jaipur",
+    "duration": "3 Days / 2 Nights",
+    "price": 12000,
+    "description": "Explore forts, palaces and the rich culture of Rajasthan."
+  },
+  {
+    "id": 4,
+    "destination": "Kerala",
+    "duration": "5 Days / 4 Nights",
+    "price": 20000,
+    "description": "Discover backwaters, beaches and natural beauty."
+  }
+]
