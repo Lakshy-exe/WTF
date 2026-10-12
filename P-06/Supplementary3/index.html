@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Movie Explorer</h1>
+        <div class="controls">
+            <label for="genre-select">Preferred Genre:</label>
+            <select id="genre-select">
+                <option value="All">All Genres</option>
+                <option value="Action">Action</option>
+                <option value="Sci-Fi">Sci-Fi</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Drama">Drama</option>
+            </select>
+            <button id="explore-btn">Find Movies</button>
+        </div>
+    </header>
+
+    <main>
+        <div id="loading-message" class="hidden">Searching database...</div>
+        <div id="error-message" class="hidden error"></div>
+        <div id="movie-results" class="grid-container">
+            <!-- Movie cards will be dynamically injected here -->
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

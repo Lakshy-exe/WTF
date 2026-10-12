@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "category": "Technology",
+        "title": "Quantum Computing Milestone Reached by Researchers",
+        "summary": "Scientists have successfully stabilized a 100-qubit quantum processor."
+    },
+    {
+        "id": 2,
+        "category": "Finance",
+        "title": "Global Markets Rally Amid Tech Surge",
+        "summary": "Stock indices hit record highs following strong earnings reports from major tech firms."
+    },
+    {
+        "id": 3,
+        "category": "Science",
+        "title": "New Exoplanet Discovered in Habitable Zone",
+        "summary": "Astronomers locate an Earth-sized planet orbiting a nearby red dwarf star."
+    },
+    {
+        "id": 4,
+        "category": "Sports",
+        "title": "Underdog Team Secures Championship Victory",
+        "summary": "In a stunning upset, the wild-card team took home the trophy last night."
+    }
+]
