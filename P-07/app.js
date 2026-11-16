@@ -1,0 +1,1 @@
+console.log("Bro, I am finally alive.");
