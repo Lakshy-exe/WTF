@@ -1,0 +1,19 @@
+{
+  "name": "finsecure-security-practical",
+  "version": "1.0.0",
+  "description": "WTF Practical 10 - Web security vulnerabilities (XSS, SQL Injection) and secure coding countermeasures - Microsoft SQL Server edition",
+  "main": "secure-app/server.js",
+  "scripts": {
+    "vulnerable": "node vulnerable-demo/server.js",
+    "secure": "node secure-app/server.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "helmet": "^7.1.0",
+    "mssql": "^11.0.1"
+  }
+}

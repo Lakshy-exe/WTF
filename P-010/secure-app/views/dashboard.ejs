@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard | FinSecure</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="navbar">
+    <strong>🔒 FinSecure Portal (Secure App)</strong>
+    <div>
+      <a href="/comments">Comments</a>
+      <a href="/logout">Logout</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>Welcome, <%= user.username %> 👋</h2>
+    <p>You are logged in through a session-protected route. This page is only reachable
+      after successful authentication (see <code>requireLogin</code> middleware in
+      <code>secure-app/server.js</code>).</p>
+    <p><a href="/comments">Go to the Comments board (output-encoding / XSS-safe demo) →</a></p>
+  </div>
+</body>
+</html>

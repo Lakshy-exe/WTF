@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Secure Login | FinSecure</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="navbar">
+    <strong>🔒 FinSecure Portal (Secure App)</strong>
+    <div><a href="/register">Register</a></div>
+  </div>
+
+  <div class="container">
+    <h2>Employee Login</h2>
+
+    <% if (info) { %>
+      <div class="info-box"><%= info %></div>
+    <% } %>
+    <% if (error) { %>
+      <div class="error-box"><%= error %></div>
+    <% } %>
+
+    <form method="POST" action="/login">
+      <label>Username</label>
+      <input type="text" name="username" required maxlength="20">
+      <label>Password</label>
+      <input type="password" name="password" required maxlength="100">
+      <button type="submit">Log In</button>
+    </form>
+    <p class="hint">All output on this page is auto-escaped by EJS and all queries use parameterized
+      placeholders — try the same SQL-injection string from the vulnerable demo here and compare the result.</p>
+  </div>
+</body>
+</html>

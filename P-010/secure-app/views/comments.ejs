@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Comments | FinSecure</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="navbar">
+    <strong>🔒 FinSecure Portal (Secure App)</strong>
+    <div>
+      <a href="/dashboard">Dashboard</a>
+      <a href="/logout">Logout</a>
+    </div>
+  </div>
+
+  <div class="container wide">
+    <h2>Comments (Secure Demo)</h2>
+
+    <% if (error) { %>
+      <div class="error-box"><%= error %></div>
+    <% } %>
+
+    <form method="POST" action="/comments">
+      <label>Comment (posting as <%= user.username %>)</label>
+      <textarea name="content" rows="2" maxlength="300" required></textarea>
+      <button type="submit">Post Comment</button>
+    </form>
+
+    <p class="hint">Try posting <code>&lt;script&gt;alert('XSS')&lt;/script&gt;</code> here — because
+      this page uses EJS's <code>&lt;%= %&gt;</code> auto-escaping, it will be displayed as harmless
+      text instead of being executed, unlike the vulnerable demo.</p>
+
+    <hr>
+    <% comments.forEach(function(c) { %>
+      <div class="comment">
+        <b><%= c.author %>:</b> <%= c.content %>
+      </div>
+    <% }); %>
+  </div>
+</body>
+</html>
