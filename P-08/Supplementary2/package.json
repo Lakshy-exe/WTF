@@ -1,0 +1,13 @@
+{
+  "name": "p8-supplementary-2-employee-management",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "mssql": "^11.0.1",
+    "msnodesqlv8": "^6.2.2"
+  }
+}

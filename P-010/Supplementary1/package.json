@@ -1,0 +1,12 @@
+{
+  "name": "p10-supplementary-1-login-audit",
+  "version": "1.0.0",
+  "main": "secure_server.js",
+  "scripts": {
+    "start": "node secure_server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "bcryptjs": "^2.4.3"
+  }
+}

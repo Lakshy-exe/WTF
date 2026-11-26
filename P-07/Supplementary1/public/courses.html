@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Materials | Online Course Portal</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <nav>
+        <div class="brand">EduStream Portal</div>
+        <div>
+            <a href="/">Home</a>
+            <a href="/courses">Courses</a>
+            <a href="/logout" class="btn btn-danger" style="padding:6px 14px;">Logout</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="card">
+            <h2 id="studentGreeting">Protected Course Materials</h2>
+            <p id="studentMeta">Authenticated Student Session Active</p>
+        </div>
+        <div class="grid">
+            <div class="module">
+                <span class="badge">ITUS102</span>
+                <h3>Web Technology Framework</h3>
+                <p>Module 1–6 Notes: HTML5, CSS3, JavaScript DOM, Node.js, Express Sessions & REST APIs.</p>
+                <button class="btn" onclick="alert('Downloading ITUS102_Notes.pdf...')">Download PDF</button>
+            </div>
+            <div class="module">
+                <span class="badge">CEUC103</span>
+                <h3>Computer Programming (C++)</h3>
+                <p>Pointers, OOP Concepts, File Handling, and Standard Template Library Workbook.</p>
+                <button class="btn" onclick="alert('Downloading CPP_Workbook.pdf...')">Download PDF</button>
+            </div>
+            <div class="module">
+                <span class="badge">EEUC101</span>
+                <h3>Basics of Electrical & Electronics</h3>
+                <p>RC Circuits, Half-Wave & Full-Wave Rectifiers, and Digital Logic Lab Manual.</p>
+                <button class="btn" onclick="alert('Downloading BEEE_Manual.pdf...')">Download PDF</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        fetch('/api/me')
+            .then(r => r.json())
+            .then(s => {
+                document.getElementById('studentGreeting').textContent = `Welcome, ${s.name}!`;
+                document.getElementById('studentMeta').textContent = `Enrollment ID: ${s.enrollment} | Authenticated Session`;
+            });
+    </script>
+</body>
+</html>

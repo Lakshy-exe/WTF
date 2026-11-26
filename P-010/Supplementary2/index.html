@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Registration Form | P10 Supplementary 2</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #f8fafc; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 20px; }
+        .card { background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); width: 100%; max-width: 460px; }
+        input { width: 100%; padding: 10px; margin: 6px 0 14px; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box; }
+        button { width: 100%; padding: 11px; background: #2563eb; color: #fff; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; }
+        .rules { font-size: 0.85rem; color: #475569; background: #f1f5f9; padding: 10px; border-radius: 6px; margin-bottom: 14px; }
+        pre { background: #0f172a; color: #38bdf8; padding: 12px; border-radius: 6px; overflow-x: auto; font-size: 0.82rem; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Secure Account Registration</h2>
+        <div class="rules">
+            <strong>Password Policy:</strong> Min 8 chars, 1 Uppercase, 1 Lowercase, 1 Number, 1 Special Char (<code>@$!%*?&</code>)
+        </div>
+        <form id="regForm">
+            <label>Username</label>
+            <input type="text" id="username" required placeholder="lakshy_dev">
+            <label>Email</label>
+            <input type="email" id="email" required placeholder="lakshy@example.com">
+            <label>Password</label>
+            <input type="password" id="password" required placeholder="Secure@2026">
+            <button type="submit">Register Securely</button>
+        </form>
+        <p id="status" style="font-weight:600;"></p>
+        <div id="hashOutput"></div>
+    </div>
+    <script>
+        document.getElementById('regForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const status = document.getElementById('status');
+            const out = document.getElementById('hashOutput');
+            const res = await fetch('/api/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    username: document.getElementById('username').value,
+                    email: document.getElementById('email').value,
+                    password: document.getElementById('password').value
+                })
+            });
+            const data = await res.json();
+            if (!res.ok) {
+                status.style.color = '#dc2626';
+                status.textContent = data.error;
+                out.innerHTML = '';
+            } else {
+                status.style.color = '#16a34a';
+                status.textContent = data.message;
+                out.innerHTML = `<p style="font-size:0.85rem;">Stored Database Record (Bcrypt Hash):</p><pre>${JSON.stringify(data.storedRecord, null, 2)}</pre>`;
+            }
+        });
+    </script>
+</body>
+</html>

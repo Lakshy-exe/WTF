@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Employee Attendance Portal</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">WorkPulse Attendance</div>
+        <div>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/profile">My Profile</a>
+            <a href="/logout" class="btn-logout">Logout</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="card" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+            <div>
+                <h2 id="empWelcome">Employee Dashboard</h2>
+                <p style="color:#64748b;">Mark your daily check-in and review attendance logs.</p>
+            </div>
+            <button class="btn" onclick="markAttendance()">Mark Today's Attendance</button>
+        </div>
+        <div class="card">
+            <h3>Attendance History</h3>
+            <table>
+                <thead>
+                    <tr><th>Employee ID</th><th>Date</th><th>Check-In Time</th><th>Status</th></tr>
+                </thead>
+                <tbody id="attTable"></tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        async function loadData() {
+            const pRes = await fetch('/api/profile');
+            const emp = await pRes.json();
+            document.getElementById('empWelcome').textContent = `Welcome, ${emp.name} (${emp.empId})`;
+
+            const aRes = await fetch('/api/attendance');
+            const logs = await aRes.json();
+            document.getElementById('attTable').innerHTML = logs.map(l => `
+                <tr>
+                    <td>${l.empId}</td>
+                    <td>${l.date}</td>
+                    <td>${l.checkIn}</td>
+                    <td><span class="status-pill">${l.status}</span></td>
+                </tr>
+            `).join('');
+        }
+
+        async function markAttendance() {
+            const res = await fetch('/api/attendance/checkin', { method: 'POST' });
+            const data = await res.json();
+            alert(data.message);
+            loadData();
+        }
+        loadData();
+    </script>
+</body>
+</html>

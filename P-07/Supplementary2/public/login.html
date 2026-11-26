@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Login | Attendance Portal</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <nav><div class="logo">WorkPulse Attendance</div></nav>
+    <div class="container" style="max-width:420px;">
+        <div class="card">
+            <h2>Employee Sign In</h2>
+            <p style="margin-bottom:14px; color:#64748b; font-size:0.9rem;">Demo: <strong>emp101</strong> / <strong>password123</strong></p>
+            <div id="msg"></div>
+            <form action="/login" method="POST">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" name="username" required placeholder="emp101">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" name="password" required placeholder="password123">
+                </div>
+                <button type="submit" class="btn" style="width:100%;">Login</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        const q = new URLSearchParams(window.location.search);
+        if (q.get('error')) document.getElementById('msg').innerHTML = '<div class="alert">Invalid credentials!</div>';
+        if (q.get('loggedout')) document.getElementById('msg').innerHTML = '<div class="alert" style="background:#dbeafe;color:#1e40af;">Session terminated. Logged out.</div>';
+    </script>
+</body>
+</html>

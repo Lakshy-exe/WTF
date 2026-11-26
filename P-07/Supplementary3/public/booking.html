@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Reservation | Grand Horizon Hotel</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <nav>
+        <div class="brand">Grand Horizon Hotel</div>
+        <div>
+            <a href="/">Home</a>
+            <a href="/booking">Reservations</a>
+            <a href="/logout" class="btn" style="background:#dc2626;padding:6px 14px;">Logout</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="card">
+            <h2 id="guestTitle">Protected Room Reservation</h2>
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label>Select Room Type</label>
+                    <select id="roomType" required>
+                        <option value="Deluxe Room">Deluxe Room (₹3,500/night)</option>
+                        <option value="Executive Suite">Executive Suite (₹6,000/night)</option>
+                        <option value="Presidential Suite">Presidential Suite (₹11,000/night)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Check-In Date</label>
+                    <input type="date" id="checkIn" required>
+                </div>
+                <div class="form-group">
+                    <label>Number of Nights</label>
+                    <input type="number" id="nights" min="1" max="30" value="2" required>
+                </div>
+                <button type="submit" class="btn">Confirm Reservation</button>
+            </form>
+        </div>
+        <div class="card">
+            <h3>Your Active Reservations</h3>
+            <table>
+                <thead>
+                    <tr><th>Booking ID</th><th>Room Type</th><th>Check-In</th><th>Nights</th><th>Total (₹)</th></tr>
+                </thead>
+                <tbody id="bookingList"></tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        async function loadBookings() {
+            const res = await fetch('/api/bookings');
+            if (!res.ok) return window.location.href = '/login';
+            const data = await res.json();
+            document.getElementById('guestTitle').textContent = `Reserve a Room — Welcome, ${data.guest.fullName}`;
+            document.getElementById('bookingList').innerHTML = data.bookings.length
+                ? data.bookings.map(b => `<tr><td>${b.bookingId}</td><td>${b.roomType}</td><td>${b.checkIn}</td><td>${b.nights}</td><td>₹${b.total}</td></tr>`).join('')
+                : '<tr><td colspan="5">No reservations yet.</td></tr>';
+        }
+
+        document.getElementById('bookingForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const payload = {
+                roomType: document.getElementById('roomType').value,
+                checkIn: document.getElementById('checkIn').value,
+                nights: document.getElementById('nights').value
+            };
+            const res = await fetch('/api/bookings', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+            const data = await res.json();
+            alert(data.message);
+            loadBookings();
+        });
+
+        loadBookings();
+    </script>
+</body>
+</html>

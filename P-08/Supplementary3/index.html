@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Book Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Library Book Management System</h1>
+    <div class="card">
+        <h2>Add / Update Book</h2>
+        <form id="bookForm">
+            <input type="hidden" id="bookId">
+            <div class="grid">
+                <input type="text" id="isbn" placeholder="ISBN (e.g., 978-0131103627)" required>
+                <input type="text" id="title" placeholder="Book Title" required>
+                <input type="text" id="author" placeholder="Author Name" required>
+                <input type="text" id="genre" placeholder="Genre" required>
+                <input type="number" id="copies" placeholder="Available Copies" min="0" required>
+            </div>
+            <button type="submit" id="saveBtn">Add Book</button>
+            <button type="button" class="clear" onclick="resetForm()">Clear</button>
+        </form>
+        <p id="msg"></p>
+    </div>
+    <div class="card">
+        <div class="header-row">
+            <h2>Book Catalog</h2>
+            <input type="text" id="searchBox" placeholder="Search by title, author, or ISBN..." oninput="loadBooks(this.value)">
+        </div>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>ID</th><th>ISBN</th><th>Title</th><th>Author</th><th>Genre</th><th>Copies</th><th>Actions</th></tr>
+                </thead>
+                <tbody id="bookTable"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login | Online Course Portal</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <nav>
+        <div class="brand">EduStream Portal</div>
+        <div>
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+        </div>
+    </nav>
+    <div class="container" style="max-width: 440px;">
+        <div class="card">
+            <h2>Student Login</h2>
+            <p>Demo Credentials: <strong>student1</strong> / <strong>pass123</strong></p>
+            <div id="statusMsg"></div>
+            <form action="/login" method="POST">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required placeholder="Enter username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="Enter password">
+                </div>
+                <button type="submit" class="btn" style="width:100%;">Sign In</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const box = document.getElementById('statusMsg');
+        if (params.get('error')) {
+            box.innerHTML = '<div class="alert alert-error">Invalid username or password. Please try again.</div>';
+        } else if (params.get('loggedout')) {
+            box.innerHTML = '<div class="alert alert-info">You have been logged out securely.</div>';
+        }
+    </script>
+</body>
+</html>

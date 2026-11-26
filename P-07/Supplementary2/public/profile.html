@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | Employee Attendance Portal</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">WorkPulse Attendance</div>
+        <div>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/profile">My Profile</a>
+            <a href="/logout" class="btn-logout">Logout</a>
+        </div>
+    </nav>
+    <div class="container" style="max-width:600px;">
+        <div class="card">
+            <h2>Employee Profile</h2>
+            <table>
+                <tbody id="profileBody"></tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        fetch('/api/profile').then(r => r.json()).then(emp => {
+            document.getElementById('profileBody').innerHTML = `
+                <tr><th>Employee ID</th><td>${emp.empId}</td></tr>
+                <tr><th>Full Name</th><td>${emp.name}</td></tr>
+                <tr><th>Department</th><td>${emp.department}</td></tr>
+                <tr><th>Designation</th><td>${emp.role}</td></tr>
+                <tr><th>Email</th><td>${emp.email}</td></tr>
+            `;
+        });
+    </script>
+</body>
+</html>

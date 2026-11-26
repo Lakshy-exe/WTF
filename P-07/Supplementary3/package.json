@@ -1,0 +1,13 @@
+{
+  "name": "p7-supplementary-3-hotel-reservation",
+  "version": "1.0.0",
+  "description": "Hotel Reservation Portal with Protected Booking Access (ITUS102 Practical 7 - Supplementary 3)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "express-session": "^1.18.1"
+  }
+}

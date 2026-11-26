@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lakshy Patel | Personal Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Lakshy.dev</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="bg-primary text-white py-5 text-center">
+        <div class="container py-4">
+            <h1 class="display-4 fw-bold">Hi, I'm Lakshy Patel</h1>
+            <p class="lead">First-Year B.Tech IT Student • Full-Stack Web Developer & C++ Programmer</p>
+            <a href="#projects" class="btn btn-light btn-lg mt-2 fw-semibold">View My Work</a>
+        </div>
+    </section>
+
+    <section id="skills" class="container my-5">
+        <h2 class="text-center fw-bold mb-4">Technical Skills</h2>
+        <div class="row g-3 text-center">
+            <div class="col-6 col-md-3"><div class="p-3 border rounded bg-light fw-bold">HTML5 & CSS3</div></div>
+            <div class="col-6 col-md-3"><div class="p-3 border rounded bg-light fw-bold">JavaScript (ES6+)</div></div>
+            <div class="col-6 col-md-3"><div class="p-3 border rounded bg-light fw-bold">Node.js & Express</div></div>
+            <div class="col-6 col-md-3"><div class="p-3 border rounded bg-light fw-bold">C++ & SQL</div></div>
+        </div>
+    </section>
+
+    <section id="projects" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-4">Featured Projects</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">TechMart Inventory System</h5>
+                            <p class="card-text text-muted">Full-stack CRUD application with session authentication, REST APIs, and SQL database integration.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">QuickShop REST Marketplace</h5>
+                            <p class="card-text text-muted">Asynchronous Fetch API product catalog supporting real-time JSON creation and validation.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">TechNova Fest Portal</h5>
+                            <p class="card-text text-muted">Responsive college technical festival website built with Bootstrap 5 grid and interactive modals.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container my-5" style="max-width: 550px;">
+        <h2 class="text-center fw-bold mb-4">Get In Touch</h2>
+        <form onsubmit="event.preventDefault(); alert('Message sent!'); this.reset();">
+            <div class="mb-3"><input type="text" class="form-control" placeholder="Your Name" required></div>
+            <div class="mb-3"><input type="email" class="form-control" placeholder="Your Email" required></div>
+            <div class="mb-3"><textarea class="form-control" rows="3" placeholder="Message" required></textarea></div>
+            <button type="submit" class="btn btn-dark w-100">Send Message</button>
+        </form>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <small>&copy; 2026 Lakshy Patel • Built with Bootstrap 5</small>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

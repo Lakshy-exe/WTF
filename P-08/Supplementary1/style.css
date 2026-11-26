@@ -1,0 +1,16 @@
+* { box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+body { background: #f1f5f9; margin: 0; padding: 24px; color: #1e293b; }
+.container { max-width: 1100px; margin: auto; }
+h1 { text-align: center; color: #0f172a; }
+.card { background: #fff; padding: 22px; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.08); margin-bottom: 22px; }
+.grid-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
+input { padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; width: 100%; }
+button { background: #2563eb; color: #fff; border: none; padding: 10px 16px; border-radius: 6px; cursor: pointer; margin-top: 14px; font-weight: 600; }
+button.secondary { background: #64748b; }
+button.delete { background: #dc2626; margin: 0; padding: 6px 10px; }
+button.edit { background: #0284c7; margin: 0 4px 0 0; padding: 6px 10px; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 11px; border: 1px solid #e2e8f0; text-align: left; }
+th { background: #0f172a; color: #fff; }
+#msg { font-weight: 600; margin-top: 12px; color: #15803d; }

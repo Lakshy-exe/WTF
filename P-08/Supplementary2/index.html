@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Admin Employee Management System</h1>
+    <div class="card">
+        <h2>Employee Details</h2>
+        <form id="empForm">
+            <input type="hidden" id="empId">
+            <div class="grid">
+                <input type="text" id="emp_code" placeholder="Employee Code (e.g., EMP04)" required>
+                <input type="text" id="name" placeholder="Full Name" required>
+                <input type="text" id="designation" placeholder="Designation" required>
+                <input type="text" id="department" placeholder="Department" required>
+                <input type="number" id="salary" placeholder="Monthly Salary (₹)" min="1" required>
+            </div>
+            <button type="submit" id="saveBtn">Add Employee</button>
+            <button type="button" class="clear" onclick="resetForm()">Clear</button>
+        </form>
+        <p id="status"></p>
+    </div>
+    <div class="card">
+        <h2>Employee Directory</h2>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>ID</th><th>Code</th><th>Name</th><th>Designation</th><th>Department</th><th>Salary</th><th>Actions</th></tr>
+                </thead>
+                <tbody id="empTable"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
